@@ -76,4 +76,8 @@ function draw() {
   });
 }
 
-draw();
+function undraw() {
+  current.forEach((index) => {
+    squares[currentPosition + index].classList.remove("tetromino");
+  });
+}
