@@ -5,6 +5,7 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .container {
@@ -35,4 +36,9 @@ body {
   width: 80px;
   height: 80px;
   margin-left: 50px;
+}
+
+.mini-grid div {
+  height: 20px;
+  width: 20px;
 }
