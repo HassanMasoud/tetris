@@ -84,6 +84,14 @@ function undraw() {
 
 timerId = setInterval(moveDown, 1000);
 
+function control(e) {
+  if (e.keyCode == 37) {
+    moveLeft();
+  }
+}
+
+document.addEventListener("keydown", control);
+
 function moveDown() {
   undraw();
   currentPosition += width;
