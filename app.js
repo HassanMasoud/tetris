@@ -4,6 +4,7 @@ const scoreDisplay = document.querySelector("#score");
 const startBtn = document.querySelector("#start-button");
 let squares = Array.from(document.querySelectorAll(".grid div"));
 let nextRandom = 0;
+let timerId;
 
 // Tetrominoes
 const l1Tetromino = [
@@ -83,7 +84,7 @@ function undraw() {
   });
 }
 
-timerId = setInterval(moveDown, 1000);
+// timerId = setInterval(moveDown, 1000);
 
 function control(e) {
   if (e.keyCode == 37) {
@@ -196,3 +197,15 @@ function displayShape() {
     displaySquares[displayIndex + index].classList.add("tetromino");
   });
 }
+
+startBtn.addEventListener("click", () => {
+  if (timerId) {
+    clearInterval(timerId);
+    timerId = null;
+  } else {
+    draw();
+    timerId = setInterval(moveDown, 1000);
+    nextRandom = Math.floor(Math.random() * theTetrominoes.length);
+    displayShape();
+  }
+});
