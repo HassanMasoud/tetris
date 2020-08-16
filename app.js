@@ -220,7 +220,9 @@ startBtn.addEventListener("click", () => {
   if (timerId) {
     clearInterval(timerId);
     timerId = null;
+    document.removeEventListener("keydown", control);
   } else {
+    document.addEventListener("keydown", control);
     draw();
     timerId = setInterval(moveDown, 1000);
     nextRandom = Math.floor(Math.random() * theTetrominoes.length);
@@ -267,5 +269,6 @@ function gameOver() {
     let finalScore = score;
     scoreDisplay.innerHTML = "Game Over! " + finalScore;
     clearInterval(timerId);
+    document.removeEventListener("keydown", control);
   }
 }
