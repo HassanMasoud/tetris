@@ -1,15 +1,30 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 100vh;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background-color: #84e6f8;
+  font-family: "Roboto";
 }
 
 .container {
   display: flex;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .grid {
@@ -17,28 +32,73 @@ body {
   height: 400px;
   display: flex;
   flex-wrap: wrap;
-  background-color: lightblue;
+  background-color: #b5f4ff;
 }
 
 .grid div {
   height: 20px;
   width: 20px;
+  border: 1px solid #00d9ff;
+  border-radius: 5%;
 }
 
 .tetromino {
-  background-color: blue;
+  border: 1px solid white;
+}
+
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #eee;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 5%;
 }
 
 .mini-grid {
   display: flex;
   flex-wrap: wrap;
-  background-color: lightblue;
   width: 80px;
   height: 80px;
-  margin-left: 50px;
+  margin: 10px;
 }
 
 .mini-grid div {
   height: 20px;
   width: 20px;
+}
+
+.grid .last-row {
+  background-color: #84e6f8;
+  border: 0px;
+}
+
+.side-bar h3 {
+  text-transform: uppercase;
+}
+
+#score {
+  font-size: 1.5rem;
+}
+
+#start-button {
+  font-size: 1.5rem;
+  background-color: #1ebcc2;
+  cursor: pointer;
+  border: none;
+  color: #eee;
+  border-radius: 10px;
+  padding: 5px 15px;
+}
+
+#start-button:focus {
+  outline: none;
 }

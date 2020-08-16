@@ -8,13 +8,13 @@ let timerId;
 let score = 0;
 
 const colors = [
-  "orange",
-  "red",
-  "purple",
-  "lightgreen",
-  "blue",
-  "pink",
-  "teal",
+  "#FF4242",
+  "#F8A130",
+  "#EC2A7B",
+  "#86C55A",
+  "#1EBCC2",
+  "#7161EF",
+  "#FFF235",
 ];
 
 // Tetrominoes
@@ -265,7 +265,7 @@ function gameOver() {
     )
   ) {
     let finalScore = score;
-    scoreDisplay.innerHTML = "Game Over! You're final score was " + finalScore;
+    scoreDisplay.innerHTML = "Game Over! " + finalScore;
     clearInterval(timerId);
   }
 }
